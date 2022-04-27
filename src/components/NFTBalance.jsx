@@ -34,6 +34,8 @@ function NFTBalance() {
   const [nftToSend, /*setNftToSend */] = useState(null);
   const [isPending, setIsPending] = useState(false);
 
+  // console.log('NFTBalances', NFTBalances)
+
   async function transfer(nft, amount, receiver) {
     const options = {
       type: nft.contract_type,

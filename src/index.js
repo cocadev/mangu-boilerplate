@@ -7,8 +7,11 @@ import QuickStart from "components/Home";
 
 /** Get your free Moralis Account https://moralis.io/ */
 
-const APP_ID = 'fWD9GmwKv4NYrkVP5hSta5PXBgSBn9qehQx6Vtxy';
-const SERVER_URL = 'https://zi4etjmbghz5.usemoralis.com:2053/server';
+// const APP_ID = 'fWD9GmwKv4NYrkVP5hSta5PXBgSBn9qehQx6Vtxy';
+// const SERVER_URL = 'https://zi4etjmbghz5.usemoralis.com:2053/server';
+
+const APP_ID = 'xyiu0UFbFkNsbv2S87Omip3XRw3geHe15ehCN36s';
+const SERVER_URL = 'https://ftulh2rfadas.usemoralis.com:2053/server';
 
 const Application = () => {
   const isServerInfo = APP_ID && SERVER_URL ? true : false;

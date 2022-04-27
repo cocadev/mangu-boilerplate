@@ -8,20 +8,22 @@ import { SelectOutlined } from "@ant-design/icons";
 import { getExplorer } from "helpers/networks";
 import Text from "antd/lib/typography/Text";
 import { connectors } from "./config";
+
 const styles = {
   account: {
-    height: "42px",
+    height: "35px",
     padding: "0 15px",
     display: "flex",
     justifyContent: "center",
+    flexDirection: 'row',
     alignItems: "center",
     width: "fit-content",
-    borderRadius: "12px",
-    backgroundColor: "rgb(244, 244, 244)",
+    borderRadius: "8px",
     cursor: "pointer",
   },
   text: {
-    color: "#21BF96",
+    color: "#fff",
+    fontSize: 16
   },
   connector: {
     alignItems: "center",
@@ -53,8 +55,9 @@ function Account() {
     return (
       <>
         <div onClick={() => setIsAuthModalVisible(true)}>
-          <p style={styles.text}>Authenticate</p>
+          <button class="hover:bg-opacity-75 transition duration-300 ease-in-out focus:outline-none rounded-lg py-2 px-4 text-sm bg-secondary text-headline" style={{ width: 140}} type="button">Connect Wallet </button>
         </div>
+        
         <Modal
           visible={isAuthModalVisible}
           footer={null}
@@ -110,28 +113,14 @@ function Account() {
 
   return (
     <>
-      {/* <button
-        onClick={async () => {
-          try {
-            console.log("change")
-            await web3._provider.request({
-              method: "wallet_switchEthereumChain",
-              params: [{ chainId: "0x38" }],
-            });
-            console.log("changed")
-          } catch (e) {
-            console.error(e);
-          }
-        }}
-      >
-        Hi
-      </button> */}
-      <div style={styles.account} onClick={() => setIsModalVisible(true)}>
+      
+      <div style={styles.account} className='hover:bg-opacity-75 transition duration-300 ease-in-out focus:outline-none rounded-lg py-2 px-4 bg-secondary text-headline' onClick={() => setIsModalVisible(true)}>
         <p style={{ marginRight: "5px", ...styles.text }}>
           {getEllipsisTxt(account, 6)}
         </p>
         <Blockie currentWallet scale={3} />
       </div>
+
       <Modal
         visible={isModalVisible}
         footer={null}
